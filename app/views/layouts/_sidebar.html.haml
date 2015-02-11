@@ -1,0 +1,90 @@
+.navbar-default.sidebar{:role => "navigation"}
+  .sidebar-nav.navbar-collapse
+    %ul#side-menu.nav
+      %li.sidebar-search
+        .input-group.custom-search-form
+          %input.form-control{:placeholder => "Search...", :type => "text"}
+            %span.input-group-btn
+              %button.btn.btn-default{:type => "button"}
+                %i.fa.fa-search
+        / /input-group
+      %li
+        = link_to root_path do
+          %i.fa.fa-dashboard.fa-fw
+          Dashboard
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-bar-chart-o.fa-fw
+          Charts
+          %span.fa.arrow
+        %ul.nav.nav-second-level
+          %li
+            = link_to "Flot Charts", flot_path
+          %li
+            = link_to "Morris.js Charts", morris_path
+        / /.nav-second-level
+      %li
+        = link_to tables_path do
+          %i.fa.fa-table.fa-fw
+          Tables
+      %li
+        = link_to forms_path do 
+          %i.fa.fa-edit.fa-fw
+          Forms
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-wrench.fa-fw
+          UI Elements
+          %span.fa.arrow
+        %ul.nav.nav-second-level
+          %li
+            = link_to "Panels and Wells", panels_wells_path
+          %li
+            = link_to "Buttons", buttons_path
+          %li
+            = link_to "Notifications", notifications_path
+          %li
+            = link_to "Typography", typography_path
+          %li
+            = link_to "Icons", icons_path
+          %li
+            = link_to "Grid", grid_path
+        / /.nav-second-level
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-sitemap.fa-fw
+          Multi-Level Dropdown
+          %span.fa.arrow
+        %ul.nav.nav-second-level
+          %li
+            %a{:href => "#"} Second Level Item
+          %li
+            %a{:href => "#"} Second Level Item
+          %li
+            %a{:href => "#"}
+              Third Level
+              %span.fa.arrow
+            %ul.nav.nav-third-level
+              %li
+                %a{:href => "#"} Third Level Item
+              %li
+                %a{:href => "#"} Third Level Item
+              %li
+                %a{:href => "#"} Third Level Item
+              %li
+                %a{:href => "#"} Third Level Item
+            / /.nav-third-level
+        / /.nav-second-level
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-files-o.fa-fw
+          Sample Pages
+          %span.fa.arrow
+        %ul.nav.nav-second-level
+          %li
+            = link_to "Blank Page", blank_path
+          %li
+            = link_to "Login Page", login_path
+        / /.nav-second-level
+  / /.sidebar-collapse
+/ /.navbar-static-side

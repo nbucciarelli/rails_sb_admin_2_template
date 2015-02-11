@@ -2,11 +2,11 @@
   .alert.alert-success.alert-dismissable
     %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
     = notice
-    = succeed "." do
-      %a.alert-link{:href => "#"} Alert Link
+    / = succeed "." do
+    /   %a.alert-link{:href => "#"} Alert Link
 - if alert
   .alert.alert-danger.alert-dismissable
     %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
     = alert
-    = succeed "." do
-      %a.alert-link{:href => "#"} Alert Link
+    / = succeed "." do
+    /   %a.alert-link{:href => "#"} Alert Link

@@ -1,17 +1,23 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.container
+  .row
+    .col-md-4.col-md-offset-4
+      .login-panel.panel.panel-default
+        .panel-heading
+          %h3.panel-title Please Sign In
+        .panel-body
+          = form_for(resource, as: resource_name, url: session_path(resource_name), :role => "form") do |f|
+            %fieldset
+              .form-group
+                = f.email_field :email, autofocus: true, :placeholder => "E-mail", class: 'form-control'
+              .form-group
+                = f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control"
+              - if devise_mapping.rememberable?
+                .checkbox
+                  = f.label :remember_me, class: "checkbox" do
+                    = f.check_box :remember_me
+                    Remember Me
+                  
+              / Change this to a button or input when using this as a form
+              = link_to "Cancel", root_path, class: "col-md-6 btn btn-lg btn-primary"
+              = f.submit "Login", class: "col-md-6 btn btn-lg btn-success"
+          = render "devise/shared/links"              

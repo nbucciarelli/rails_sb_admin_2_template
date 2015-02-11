@@ -19,10 +19,11 @@
   %body
     #wrapper
       / Navigation
-      = render 'layouts/nav'
+      %nav.navbar.navbar-default.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0"}
+        = render 'layouts/nav'
+        = render 'layouts/sidebar'
       #page-wrapper
         = render 'layouts/alerts' if notice || alert
-
         = yield
       / /#page-wrapper
     / /#wrapper
